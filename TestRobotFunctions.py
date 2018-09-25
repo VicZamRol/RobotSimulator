@@ -2,6 +2,7 @@
 
 # import statements
 import unittest
+import ParserFunctions
 
 class TestSystemFunctions(unittest.TestCase):
 
@@ -30,3 +31,9 @@ class TestSystemFunctions(unittest.TestCase):
 	def test_isValidCommand_forNoValidCommand(self):
 		result = ParserFunctions.isValidCommand("HELLO")
 		self.assertEqual("invalid command", result)
+
+
+# Run the tests
+
+if __name__ == '__main__':
+	unittest.main()
