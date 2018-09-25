@@ -3,6 +3,7 @@
 # import statements
 import unittest
 import ParserFunctions
+import RobotFunctions
 
 class TestSystemFunctions(unittest.TestCase):
 
@@ -31,6 +32,70 @@ class TestSystemFunctions(unittest.TestCase):
 	def test_isValidCommand_forNoValidCommand(self):
 		result = ParserFunctions.isValidCommand("HELLO")
 		self.assertEqual("invalid command", result)
+
+	def test_isValidCommand_forNoValidPLACEOrientation(self):
+		result = ParserFunctions.isValidCommand("PLACE 0,1,NORT")
+		self.assertEqual("invalid command", result)
+
+	def test_isValidCommand_forNoValidPLACEPosition(self):
+		result = ParserFunctions.isValidCommand("PLACE 4,5,NORTH")
+		self.assertEqual("invalid command", result)
+
+	# Test Robot Functions
+
+	def test_Robot_PlaceRobotInBoard(self):
+		new_robot = RobotFunctions.Robot(0, 1, 'NORTH')
+		self.assertEqual(0, new_robot.getX())
+		self.assertEqual(1, new_robot.getY())
+		self.assertEqual('NORTH', new_robot.getFacing())
+
+	def test_Rotate_fromNorthToRight(self):
+		robot = RobotFunctions.Robot(0, 1, 'NORTH')
+		robot.right()	# Right rotation
+		result = robot.getFacing()
+		self.assertEqual('EAST', result)
+
+	def test_Rotate_fromSouthToRight(self):
+		robot = RobotFunctions.Robot(0, 1, 'SOUTH')
+		robot.right()	# Right rotation
+		result = robot.getFacing()
+		self.assertEqual('WEST', result)
+
+	def test_Rotate_fromEastToRight(self):
+		robot = RobotFunctions.Robot(0, 1, 'EAST')
+		robot.right()	# Right rotation
+		result = robot.getFacing()
+		self.assertEqual('SOUTH', result)
+
+	def test_Rotate_fromWestToRight(self):
+		robot = RobotFunctions.Robot(0, 1, 'WEST')
+		robot.right()	# Right rotation
+		result = robot.getFacing()
+		self.assertEqual('NORTH',result)
+
+	def test_Rotate_fromNorthToLeft(self):
+		robot = RobotFunctions.Robot(0, 1, 'NORTH')
+		robot.left()	# Left rotation
+		result = robot.getFacing()
+		self.assertEqual('WEST', result)
+
+	def test_Rotate_fromSouthToLeft(self):
+		robot = RobotFunctions.Robot(0, 1, 'SOUTH')
+		robot.left()	# Left rotation
+		result = robot.getFacing()
+		self.assertEqual('EAST', result)
+
+	def test_Rotate_fromEastToLeft(self):
+		robot = RobotFunctions.Robot(0, 1, 'EAST')
+		robot.left()	# Left rotation
+		result = robot.getFacing()
+		self.assertEqual('NORTH', result)
+
+	def test_Rotate_fromWestToLeft(self):
+		robot = RobotFunctions.Robot(0, 1, 'WEST')
+		robot.left()	# Left rotation
+		result = robot.getFacing()
+		self.assertEqual('SOUTH', result)
 
 
 # Run the tests
