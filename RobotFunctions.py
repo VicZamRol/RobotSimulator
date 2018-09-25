@@ -63,3 +63,8 @@ class Robot:
 			new_position = int(self.x) - 1
 			if ParserFunctions.isInRange(new_position, self.y):
 				self.x = new_position
+
+	def report(self):
+		result = str(self.x) + ',' + str(self.y) + ',' + str(self.orientation)
+		print(result)
+		return result
