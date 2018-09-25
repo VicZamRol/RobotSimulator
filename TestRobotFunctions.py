@@ -153,6 +153,11 @@ class TestSystemFunctions(unittest.TestCase):
 		self.assertEqual(1, robot.getY())
 		self.assertEqual('WEST', robot.getFacing())
 
+	def test_Report(self):
+		robot = RobotFunctions.Robot(0, 1, 'WEST')
+		result = robot.report()
+		self.assertEqual('0,1,WEST', result)
+
 
 # Run the tests
 
