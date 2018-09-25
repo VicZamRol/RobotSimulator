@@ -125,6 +125,34 @@ class TestSystemFunctions(unittest.TestCase):
 		self.assertEqual(1, robot.getY())
 		self.assertEqual('WEST', robot.getFacing())
 
+	def test_Move_forNorthBoundariesfacingNorth(self):
+		robot = RobotFunctions.Robot(1, 4, 'NORTH')
+		robot.move()	# Move robot
+		self.assertEqual(1, robot.getX())
+		self.assertEqual(4, robot.getY())
+		self.assertEqual('NORTH', robot.getFacing())
+
+	def test_Move_forSouthBoundariesfacingSouth(self):
+		robot = RobotFunctions.Robot(1, 0, 'SOUTH')
+		robot.move()	# Move robot
+		self.assertEqual(1, robot.getX())
+		self.assertEqual(0, robot.getY())
+		self.assertEqual('SOUTH', robot.getFacing())
+
+	def test_Move_forEastBoundariesfacingEast(self):
+		robot = RobotFunctions.Robot(4, 1, 'EAST')
+		robot.move()	# Move robot
+		self.assertEqual(4, robot.getX())
+		self.assertEqual(1, robot.getY())
+		self.assertEqual('EAST', robot.getFacing())
+
+	def test_Move_forWestBoundariesfacingWest(self):
+		robot = RobotFunctions.Robot(0, 1, 'WEST')
+		robot.move()	# Move robot
+		self.assertEqual(0, robot.getX())
+		self.assertEqual(1, robot.getY())
+		self.assertEqual('WEST', robot.getFacing())
+
 
 # Run the tests
 
