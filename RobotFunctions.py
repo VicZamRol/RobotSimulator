@@ -3,6 +3,7 @@
 # import statements
 import ParserFunctions
 
+
 class Robot:
 
 	def __init__(self, x, y, orientation):
@@ -49,22 +50,22 @@ class Robot:
 
 		if self.orientation == 'NORTH':
 			new_position = int(self.y) + 1
-			if ParserFunctions.isInRange(self.x, new_position):
+			if ParserFunctions.isInRange(self.x, new_position):		# Checks if the new values are inside the range
 				self.y = new_position
 		elif self.orientation == 'SOUTH':
 			new_position = int(self.y) - 1
-			if ParserFunctions.isInRange(self.x, new_position):
+			if ParserFunctions.isInRange(self.x, new_position):		# Checks if the new values are inside the range
 				self.y = new_position
 		elif self.orientation == 'EAST':
 			new_position = int(self.x) + 1
-			if ParserFunctions.isInRange(new_position, self.y):
+			if ParserFunctions.isInRange(new_position, self.y):		# Checks if the new values are inside the range
 				self.x = new_position
 		elif self.orientation == 'WEST':
 			new_position = int(self.x) - 1
-			if ParserFunctions.isInRange(new_position, self.y):
+			if ParserFunctions.isInRange(new_position, self.y):		# Checks if the new values are inside the range
 				self.x = new_position
 
 	def report(self):
 		result = str(self.x) + ',' + str(self.y) + ',' + str(self.orientation)
-		print(result)
+		print(result)		# Output
 		return result

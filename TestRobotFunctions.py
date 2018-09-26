@@ -158,6 +158,28 @@ class TestSystemFunctions(unittest.TestCase):
 		result = robot.report()
 		self.assertEqual('0,1,WEST', result)
 
+	# Test Game Functions
+
+	def test_Game_forValidSequence_1(self):
+		sequenceCommands = ['PLACE 0,0,NORTH', 'MOVE', 'REPORT']
+		result = Game.run_game(sequenceCommands)
+		self.assertEqual('0,1,NORTH', result)
+
+	def test_Game_forValidSequence_2(self):
+		sequenceCommands = ['PLACE 0,0,NORTH', 'LEFT', 'REPORT']
+		result = Game.run_game(sequenceCommands)
+		self.assertEqual('0,0,WEST', result)
+
+	def test_Game_forValidSequence_3(self):
+		sequenceCommands = ['PLACE 1,2,EAST', 'MOVE', 'MOVE', 'LEFT', 'MOVE', 'REPORT']
+		result = Game.run_game(sequenceCommands)
+		self.assertEqual('3,3,NORTH', result)
+
+	def test_Game_forInvalidSequence_1(self):
+		sequenceCommands = ['PLACE 9,2,EAST', 'MOVE', 'MOVE', 'LEFT', 'PLACE 1,2,EAST', 'MOVE', 'MOVE', 'LEFT', 'MOVE', 'REPORT']
+		result = Game.run_game(sequenceCommands)
+		self.assertEqual('3,3,NORTH', result)
+
 
 # Run the tests
 
