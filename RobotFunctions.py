@@ -6,6 +6,8 @@ import ParserFunctions
 
 class Robot:
 
+	# Create a new instance of robot = PLACE command 
+
 	def __init__(self, x, y, orientation):
 
 		self.x = x

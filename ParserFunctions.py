@@ -26,6 +26,8 @@ def isValidPLACECommand(command):
 
 	return result
 
+# This fuction check if the values of arguments in PLACE command are inside the board
+
 def isInRange(x, y):
 
 	result = False
@@ -34,6 +36,8 @@ def isInRange(x, y):
 		result = True
 
 	return result
+
+# Check if orientation value argument is valid
 
 def isValidOrientation(orientation):
 
@@ -44,3 +48,15 @@ def isValidOrientation(orientation):
 		result = True
 
 	return result
+
+# Function to extract the arguments from PLACE command
+
+def argumentExtractionPlace(place_command):
+
+	args = place_command.split(' ')[1]
+	args_list = args.split(',')
+	arg_x = args_list[0]
+	arg_y = args_list[1]
+	orientation = args_list[2]
+
+	return arg_x, arg_y, orientation

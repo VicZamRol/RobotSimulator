@@ -4,6 +4,7 @@
 import unittest
 import ParserFunctions
 import RobotFunctions
+import Game
 
 class TestSystemFunctions(unittest.TestCase):
 
@@ -177,6 +178,11 @@ class TestSystemFunctions(unittest.TestCase):
 
 	def test_Game_forInvalidSequence_1(self):
 		sequenceCommands = ['PLACE 9,2,EAST', 'MOVE', 'MOVE', 'LEFT', 'PLACE 1,2,EAST', 'MOVE', 'MOVE', 'LEFT', 'MOVE', 'REPORT']
+		result = Game.run_game(sequenceCommands)
+		self.assertEqual('3,3,NORTH', result)
+
+	def test_Game_forInvalidSequence_2(self):
+		sequenceCommands = ['MOVE', 'MOVE', 'LEFT', 'PLACE 1,2,EAST', 'MOVE', 'PLACE 9,2,EAST', 'MOVE', 'LEFT', 'MOVE', 'REPORT']
 		result = Game.run_game(sequenceCommands)
 		self.assertEqual('3,3,NORTH', result)
 
