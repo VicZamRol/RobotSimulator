@@ -26,13 +26,10 @@ def run_game(command_list):
 	for c in command_list:
 		if ParserFunctions.isValidCommand(c):		# Checks if the command is valid
 			command_name = c.split(' ')[0]
-
 			if command_name == 'PLACE':
 				arg_x, arg_y, orientation = ParserFunctions.argumentExtractionPlace(c)	# Extraction of PLACE arguments
-
 				if ParserFunctions.isInRange(arg_x, arg_y):
 					robot = RobotFunctions.Robot(arg_x, arg_y, orientation)		# Places the robot
-
 			elif command_name == 'MOVE' and robot != None:
 				robot.move()
 			elif command_name == 'RIGHT' and robot != None:
