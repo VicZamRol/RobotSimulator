@@ -39,7 +39,8 @@ Running the code
   $ cd your/local/folder/RobotSimulator
   ```
   * Run TestRobotFunctions.py 
-  ```$ python TestRobotFunctions.py
+  ```
+  $ python TestRobotFunctions.py
   ```
 
   ### Coding style tests
