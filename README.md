@@ -63,7 +63,7 @@ Running the code
   $ Please enter your commands then press ctrl+d:
   $ PLACE 0,0,WEST
   $ REPORT
-  $ ctrl+d
+  $ (ctrl+d)
   ```
   * The output should be similar to:
   ```
@@ -72,8 +72,27 @@ Running the code
   - Notes:
   	* If you press 'ctrl+d' in the same line where the last command input is,
   	you should press 'ctrl+d' two time to create the EOF in the system.
+  	```
+  $ Please enter your commands then press ctrl+d:
+  $ Command 1
+  $ Command 2
+  .
+  .
+  $ Command n (ctrl+d) + (ctrl+d)
+  $ Result
+  ```
   	* If you press 'ctrl+d' in the next line where the last command input is,
   	you should press 'ctrl+d' only one time to create the EOF in the system.
+  ```
+  $ Please enter your commands then press ctrl+d:
+  $ Command 1
+  $ Command 2
+  .
+  .
+  $ Command n
+  $ (ctrl+d)
+  $ Result
+  ```
   	* This system has been tested in Mac, Linux, Ubuntu and Centos. If you
   	are using different OS, maybe 'ctrl+d' doesn't create EOF in the system.
 
