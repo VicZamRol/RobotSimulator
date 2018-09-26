@@ -35,21 +35,28 @@ Running the code
    	
   * Open a new terminal window
   * Move into the project directory
-  `$ cd your/local/folder/RobotSimulator`
+  ```
+  $ cd your/local/folder/RobotSimulator
+  ```
   * Run TestRobotFunctions.py 
-  `$ python TestRobotFunctions.py`
+  ```$ python TestRobotFunctions.py
+  ```
 
   ### Coding style tests
 
-    - Testing code have been implemented following TDD technique.
+  - Testing code have been implemented following TDD techniques.
 
   ### Running the simulator
 
   * Open a terminal window
   * Move into the project directory
-  `$ cd your/local/folder/RobotSimulator`
+  ```
+  $ cd your/local/folder/RobotSimulator
+  ```
   * Run Game.py
-  `$ python Game.py`
+  ```
+  $ python Game.py
+  ```
   * Enter your commands
   ```
   $ Please enter your commands then press ctrl+d:
@@ -61,7 +68,7 @@ Running the code
   ```
   $ 0,0,WEST
   ```
-  - Note:
+  - Notes:
   	* If you press 'ctrl+d' in the same line where the last command input is,
   	you should press 'ctrl+d' two time to create the EOF in the system.
   	* If you press 'ctrl+d' in the next line where the last command input is,
